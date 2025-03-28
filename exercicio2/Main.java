@@ -27,16 +27,16 @@ public class Main{
                     System.out.println("Livro cadastrado com sucesso!");
                     break;
                 case 2:
-                    // System.out.println("Digite o nome do livro:");
-                    // String nomeConsulta = scanner.next();
-                    // Livro livroConsulta = Livro.ConsultaLivro(nomeConsulta);
-                    // if (livroConsulta != null) {
-                    //     System.out.println("Nome: " + livroConsulta.getNome());
-                    //     System.out.println("Autor: " + livroConsulta.getAutor());
-                    //     System.out.println("Ano: " + livroConsulta.getAutor());
-                    // } else {
-                    //     System.out.println("Livro não encontrado.");
-                    // }
+                    System.out.println("Digite o nome do livro:");
+                    String nomeConsulta = scanner.next();
+                    Livro livroConsulta = Livro.ConsultaLivro(nomeConsulta);
+                    if (livroConsulta != null) {
+                        System.out.println("Nome: " + livroConsulta.getNome());
+                        System.out.println("Autor: " + livroConsulta.getAutor());
+                        System.out.println("Ano: " + livroConsulta.getAno());
+                    } else {
+                        System.out.println("Livro não encontrado.");
+                    }
                     break;
                 case 3:
                     System.out.println("Saindo...");
@@ -50,4 +50,4 @@ public class Main{
     }   
 
 }
-    
+

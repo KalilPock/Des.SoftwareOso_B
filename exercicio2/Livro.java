@@ -1,32 +1,37 @@
+import java.util.ArrayList;
+
 public class Livro {
+    private String nome;
+    private String autor;
+    private int ano;
 
-    String titulo;
-    String autor;
-    int ano;
+    private static ArrayList<Livro> livros = new ArrayList<>();
 
-    public Livro(String titulo, String autor, int ano) {
-        this.titulo = titulo;
+    public Livro(String nome, String autor, int ano) {
+        this.nome = nome;
         this.autor = autor;
         this.ano = ano;
+        livros.add(this);
     }
 
-    public static void CadastroLivro(){
-
-    
+    public String getNome() {
+        return nome;
     }
-
-    public static void ConsultaLivro(){
-
-       
-    }
-
-    // public String getNome() {
-
-    // }
 
     public String getAutor() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAutor'");
+        return autor;
     }
 
+    public int getAno() {
+        return ano;
+    }
+
+    public static Livro ConsultaLivro(String nome) {
+        for (Livro livro : livros) {
+            if (livro.getNome().equalsIgnoreCase(nome)) {
+                return livro;
+            }
+        }
+        return null;
+    }
 }
