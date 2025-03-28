@@ -12,12 +12,21 @@ public class Livro {
 
     public static void CadastroLivro(){
 
-        System.out.println("Cadastro de Livro");
+    
     }
 
     public static void ConsultaLivro(){
 
-        System.out.println("Consulta de Livro");
+       
+    }
+
+    // public String getNome() {
+
+    // }
+
+    public String getAutor() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAutor'");
     }
 
 }
