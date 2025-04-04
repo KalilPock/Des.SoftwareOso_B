@@ -41,4 +41,13 @@ public class Jogador {
     public void zerarPontuacao() {
         this.pontuacao = 0;
     }
+
+    public void exibirInfo(){
+        System.out.println("Exibindo as Informações do jogador! :");
+        System.out.println("Nome:" + nome);
+        System.out.println("Nivel:" + nivel);
+        System.out.println("Pontuação:" + pontuacao);
+    }
+
+
 }
