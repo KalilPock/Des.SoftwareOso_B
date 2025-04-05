@@ -37,8 +37,12 @@ public class Jogador {
         this.nivel = nivel;
     }
 
-    public void atualizarPontuacao(int pontos) {
+    public void aumentaPontuacao(int pontos) {
         this.pontuacao += pontos;
+    }
+
+    public void diminuiPontuacao(int pontos) {
+        this.pontuacao -= pontos;
     }
 
     public void exibirInfo() {
@@ -98,40 +102,99 @@ public class Jogador {
     }
 
     private static void atualizarPontuacao(ArrayList<Jogador> jogadores, Scanner scanner) {
-        System.out.println("Digite o nome do jogador:");
-        String nomeAumento = scanner.next();
-        System.out.println("Digite a quantidade de pontos a aumentar:");
-        int pontosAumento = scanner.nextInt();
-        boolean jogadorEncontrado = false;
 
-        for (Jogador j : jogadores) {
-            if (j.getNome().equalsIgnoreCase(nomeAumento)) {
-                j.atualizarPontuacao(pontosAumento);
-                System.out.println("Pontuação aumentada com sucesso!");
-                jogadorEncontrado = true;
-                break;
-            }
+        System.out.println("Digite 1 para aumentar a pontuação ou 2 para diminuir:");
+        int opcao = scanner.nextInt();
+        if (opcao != 1 && opcao != 2) {
+            System.out.println("Opção inválida.");
+            return;
         }
-        if (!jogadorEncontrado) {
-            System.out.println("Jogador não encontrado.");
+        if (opcao == 1) {
+            System.out.println("Digite o nome do jogador:");
+            String nomeAumento = scanner.next();
+            System.out.println("Digite a quantidade de pontos a aumentar:");
+            int pontosAumento = scanner.nextInt();
+            boolean jogadorEncontrado = false;
+    
+            for (Jogador j : jogadores) {
+                if (j.getNome().equalsIgnoreCase(nomeAumento)) {
+                    j.aumentaPontuacao(pontosAumento);
+                    System.out.println("Pontuação aumentada com sucesso!");
+                    jogadorEncontrado = true;
+                    break;
+                }
+            }
+            if (!jogadorEncontrado) {
+                System.out.println("Jogador não encontrado.");
+            }
+        } else {
+            System.out.println("Digite o nome do jogador:");
+            String nomeDiminui = scanner.next();
+            System.out.println("Digite a quantidade de pontos a dimiuir:");
+            int pontosDiminui = scanner.nextInt();
+            boolean jogadorEncontrado = false;
+    
+            for (Jogador j : jogadores) {
+                if (j.getNome().equalsIgnoreCase(nomeDiminui)) {
+                    j.diminuiPontuacao(pontosDiminui);
+                    System.out.println("Pontuação dimiuida com sucesso!");
+                    jogadorEncontrado = true;
+                    break;
+                }
+            }
+            if (!jogadorEncontrado) {
+                System.out.println("Jogador não encontrado.");
+            }
         }
     }
 
     private static void atualizarNivel(ArrayList<Jogador> jogadores, Scanner scanner) {
-        System.out.println("Digite o nome do jogador:");
-        String nomeNivel = scanner.next();
-        boolean jogadorNivelEncontrado = false;
 
-        for (Jogador j : jogadores) {
-            if (j.getNome().equalsIgnoreCase(nomeNivel)) {
-                j.setNivel(j.getNivel() + 1);
-                System.out.println("Nível atualizado com sucesso!");
-                jogadorNivelEncontrado = true;
-                break;
-            }
+        System.out.println("Digite 1 para aumentar o nível ou 2 para diminuir:");
+        int opcao = scanner.nextInt();
+        if (opcao != 1 && opcao != 2) {
+            System.out.println("Opção inválida.");
+            return;
         }
-        if (!jogadorNivelEncontrado) {
-            System.out.println("Jogador não encontrado.");
+        if (opcao == 1) {
+            System.out.println("Digite o nome do jogador:");
+            String nomeAumento = scanner.next();
+            System.out.println("Digite a quantidade de níveis a aumentar:");
+            int niveisAumento = scanner.nextInt();
+            boolean jogadorEncontrado = false;
+
+            for (Jogador j : jogadores) {
+                if (j.getNome().equalsIgnoreCase(nomeAumento)) {
+                    j.setNivel(j.getNivel() + niveisAumento);
+                    System.out.println("Nível aumentado com sucesso!");
+                    jogadorEncontrado = true;
+                    break;
+                }
+            }
+            if (!jogadorEncontrado) {
+                System.out.println("Jogador não encontrado.");
+            }
+            return;
+        }
+        if (opcao == 2) {
+            System.out.println("Digite o nome do jogador:");
+            String nomeDiminui = scanner.next();
+            System.out.println("Digite a quantidade de níveis a diminuir:");
+            int niveisDiminui = scanner.nextInt();
+            boolean jogadorEncontrado = false;
+
+            for (Jogador j : jogadores) {
+                if (j.getNome().equalsIgnoreCase(nomeDiminui)) {
+                    j.setNivel(j.getNivel() - niveisDiminui);
+                    System.out.println("Nível diminuido com sucesso!");
+                    jogadorEncontrado = true;
+                    break;
+                }
+            }
+            if (!jogadorEncontrado) {
+                System.out.println("Jogador não encontrado.");
+            }
+            return;
         }
     }
 
