@@ -1,5 +1,3 @@
-package exercicio6;
-
 import java.util.ArrayList;
 
 public class Contato {
