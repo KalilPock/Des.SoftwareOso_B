@@ -1,12 +1,9 @@
-import java.util.ArrayList;
-
 public class Contato {
 
     private String nome;
     private String telefone;
     private String email;
 
-    ArrayList<Contato> contatos = new ArrayList<>();
     
     public Contato(String nome, String telefone, String email) {
         this.nome = nome;
@@ -36,5 +33,10 @@ public class Contato {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void add(Contato contato) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'add'");
     }
 }
