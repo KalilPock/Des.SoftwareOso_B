@@ -109,9 +109,21 @@ public class App7 {
         }
 
         public static void gerarRelatorio() {
-            // Implementar lógica para gerar relatório
-            System.out.println("Relatório gerado com sucesso.");
-        }
-        
 
+            System.out.println("Relatório de Estoque:");
+            int quantidadeTotal = 0;
+            double valorTotal = 0;
+            for (Produto produto : produtos) {
+            valorTotal += produto.getPreco();
+            quantidadeTotal += produto.getQuantidadeEstoque();
+            System.out.println("Produto: " + produto.getNome() + " | Quantidade em Estoque: " + produto.getQuantidadeEstoque() + " | Preço: " + produto.getPreco());
+            }
+            System.out.println("-----------------------------");
+            System.out.println("Quantidade total no estoque: " + quantidadeTotal);
+            System.out.println("Valor total do estoque: " + valorTotal);
+            System.out.println("-----------------------------");
     }
+
+
+}
+    
